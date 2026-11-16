@@ -13,7 +13,7 @@ const SITE = {
   githubLabel: "github.com/cathyleii",
   location: "Vancouver, B.C., Canada",
 
-  intro: "Third-year student at UBC studying <strong>Computer Science and Bioinformatics</strong>. I build web apps, machine learning tools, and a programming language, and I teach people how to code (and play piano).",
+  intro: "Hi! I'm a student at UBC studying <strong>Computer Science and Bioinformatics</strong>. If the format of this website didn't already give it away, I love blending my tech projects with my hobbies in music and studies in genomics. When I'm not coding, I'm usually teaching :)",
 
   about: [
     "I\u2019m studying Integrated Sciences at the University of British Columbia, combining computer science with bioinformatics. I like projects where software meets something human: a journaling app that picks music for your mood, a model that screens MRI scans, a language for drawing graphs.",

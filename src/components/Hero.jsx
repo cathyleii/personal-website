@@ -1,4 +1,7 @@
+import { useMemo, useState } from 'react';
+import Helix from './Helix.jsx';
 import Sequencer from './Sequencer.jsx';
+import { encode } from '../lib/dna.js';
 
 const GLYPHS = ['\u266A', 'A', '\u266B', 'T', '\u2669', 'C', '\u266C', 'G'];
 
@@ -17,8 +20,13 @@ function Floaters() {
 }
 
 export default function Hero({ site, sound, setSound }) {
+  const [text, setText] = useState(site.name);
+  const [pos, setPos] = useState(-1);
+  const bases = useMemo(() => encode(text), [text]);
+
   return (
     <header className="hero">
+      <Helix bases={bases} pos={pos} />
       <Floaters />
       <div className="wrap">
         <h1>{site.name}</h1>
@@ -32,7 +40,7 @@ export default function Hero({ site, sound, setSound }) {
             &#9835; Sound: {sound ? 'on' : 'off'}
           </button>
         </div>
-        <Sequencer initial={site.name} />
+        <Sequencer text={text} setText={setText} bases={bases} pos={pos} setPos={setPos} />
       </div>
     </header>
   );
