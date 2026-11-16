@@ -1,0 +1,166 @@
+:root{
+  --bg:#f6f5fa; --surface:#ffffff; --ink:#1c2140; --muted:#59607f; --line:#dcdbe9;
+  --accent:#17806f; --accent-soft:#dff2ee; --key-black:#1c2140; --key-white:#ffffff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12152a; --surface:#1b1f3a; --ink:#eceef9; --muted:#a2a8c6; --line:#2f3556;
+    --accent:#5fd3bd; --accent-soft:#1d3a3a; --key-black:#05060f; --key-white:#e9ebf6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12152a; --surface:#1b1f3a; --ink:#eceef9; --muted:#a2a8c6; --line:#2f3556;
+  --accent:#5fd3bd; --accent-soft:#1d3a3a; --key-black:#05060f; --key-white:#e9ebf6; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+header.hero{padding:5rem 0 2.5rem}
+.hero h1{font-size:clamp(3.2rem,11vw,7.5rem);line-height:.92;margin:0 0 1.5rem;font-weight:800;letter-spacing:-.035em}
+.hero p.lead{font-size:clamp(1.15rem,2.4vw,1.5rem);max-width:36rem;margin:0 0 1.5rem;color:var(--muted)}
+.hero p.lead strong{color:var(--ink);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.6rem 1.1rem;border:2px solid var(--ink);border-radius:.4rem;color:var(--ink);text-decoration:none;font-weight:600}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent);color:var(--bg)}
+
+/* piano-key navigation */
+.keys{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;height:5.5rem;margin:0 auto;max-width:60rem;padding:0 1.5rem;background:var(--bg)}
+.keys .inner{position:relative;display:flex;flex:1;border:2px solid var(--ink);border-radius:0 0 .5rem .5rem;overflow:hidden;background:var(--key-white)}
+.keys a{flex:1;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.5rem;color:#1c2140;text-decoration:none;font-weight:600;font-size:.95rem;border-right:1px solid var(--line);transition:background .12s,transform .12s}
+.keys a:last-of-type{border-right:0}
+.keys a:hover,.keys a.on{background:var(--accent-soft)}
+.keys a:active{transform:translateY(2px)}
+:root[data-theme="dark"] .keys a{color:#1c2140}
+.black{position:absolute;top:0;width:8%;height:58%;background:var(--key-black);border-radius:0 0 .3rem .3rem;transform:translateX(-50%);pointer-events:none}
+@media (max-width:30rem){.keys a{font-size:.72rem}}
+
+section{padding:4rem 0 1rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.75rem;letter-spacing:-.02em;line-height:1.1}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
+@media (max-width:46rem){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 1rem;max-width:38rem}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:.6rem;padding:1.25rem 1.5rem}
+.fact h3{margin:0 0 .5rem;font-size:1.05rem}
+.fact p{margin:0 0 .25rem;color:var(--muted);font-size:.98rem}
+.fact+.fact{margin-top:1rem}
+
+.project{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.project:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:40rem){.project{grid-template-columns:1fr;gap:.5rem}}
+.when{color:var(--muted);font-size:.95rem;padding-top:.3rem}
+.project h3{margin:0 0 .25rem;font-size:1.45rem;letter-spacing:-.01em}
+.stack{margin:0 0 .75rem;color:var(--accent);font-weight:600;font-size:.95rem}
+.project ul,.job ul{margin:0;padding-left:1.2rem;max-width:42rem}
+.project li,.job li{margin-bottom:.35rem}
+.demo{display:inline-block;margin-top:.5rem;font-weight:600}
+
+.job{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+@media (max-width:40rem){.job{grid-template-columns:1fr;gap:.5rem}}
+.job h3{margin:0;font-size:1.3rem}
+.job .org{margin:0 0 .75rem;color:var(--muted)}
+.sub{font-size:1.1rem;margin:2.5rem 0 0;color:var(--muted);font-weight:600}
+
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 2rem;padding:0;list-style:none}
+.skills li{padding:.35rem .85rem;border:1.5px solid var(--ink);border-radius:2rem;font-weight:600;font-size:.98rem}
+.courses{columns:2 18rem;column-gap:2rem;padding-left:1.2rem;margin:0;max-width:44rem}
+.courses li{margin-bottom:.35rem}
+
+.contact p{max-width:34rem;font-size:1.2rem}
+.big{font-size:clamp(1.3rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;word-break:break-word}
+footer{margin-top:4rem;padding:1.5rem 0 2.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.keys a{transition:none}}
+
+.project h3 a,.job h3 a{color:inherit}
+#volunteer-list .job:first-child{border-top:0}
+
+/* ===== Bioinformatics + music theme & animation ===== */
+:root{--base-a:#17806f;--base-t:#6a5fe0;--base-c:#d98e1f;--base-g:#d9436b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--base-a:#5fd3bd;--base-t:#a79bff;--base-c:#ffc266;--base-g:#ff8aa8}}
+:root[data-theme="dark"]{--base-a:#5fd3bd;--base-t:#a79bff;--base-c:#ffc266;--base-g:#ff8aa8}
+
+header.hero{position:relative;overflow:hidden;padding-bottom:0}
+.hero .wrap{position:relative;z-index:1}
+.helix{display:block;width:100%;height:9rem;margin-top:1.5rem}
+button.btn{font:inherit;font-weight:600;background:transparent;cursor:pointer}
+button.btn.sound[aria-pressed="false"]{opacity:.6}
+
+/* drifting notes and nucleotides */
+.float{position:absolute;bottom:-2rem;z-index:0;color:var(--accent);opacity:0;font-weight:800;pointer-events:none;
+  animation:drift var(--d,12s) linear var(--delay,0s) infinite}
+@keyframes drift{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.35}90%{opacity:.25}100%{transform:translateY(-30rem) rotate(40deg);opacity:0}}
+
+/* hero entrance */
+.hero h1,.hero .lead,.hero .links{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.12s}.hero .links{animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* scroll reveal (class added by script.js) */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* four-base underline on headings */
+h2{position:relative;padding-bottom:.7rem}
+h2::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:0;border-radius:3px;transition:width .9s .2s ease;
+  background:linear-gradient(90deg,var(--base-a) 25%,var(--base-t) 25% 50%,var(--base-c) 50% 75%,var(--base-g) 75%)}
+h2.in::after{width:5rem}
+
+/* project / job hover */
+.project,.job{transition:background .25s,padding-left .25s}
+.project:hover,.job:hover{background:linear-gradient(90deg,var(--accent-soft),transparent 70%);padding-left:.75rem}
+.fact{transition:transform .25s,border-color .25s}
+.fact:hover{transform:translateY(-3px);border-color:var(--accent)}
+
+/* skills as colored "bases" */
+.skills li{transition:transform .2s,background .2s,color .2s}
+.skills li:nth-child(4n+1){border-color:var(--base-a)}.skills li:nth-child(4n+2){border-color:var(--base-t)}
+.skills li:nth-child(4n+3){border-color:var(--base-c)}.skills li:nth-child(4n){border-color:var(--base-g)}
+.skills li:hover{transform:translateY(-3px) rotate(-2deg);background:var(--accent-soft)}
+
+/* piano key press */
+.keys a.pressed{background:var(--accent);color:#fff;transform:translateY(3px)}
+.keys a{position:relative}
+.keys a::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,var(--accent-soft),transparent 70%);opacity:0;transition:opacity .2s}
+.keys a:hover::before{opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .float{display:none}
+  .hero h1,.hero .lead,.hero .links{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  h2::after{width:5rem;transition:none}
+}
+
+/* ===== Score + genome concept ===== */
+:root{--serif:"Instrument Serif",Georgia,"Times New Roman",serif}
+header.hero{padding-bottom:3rem}
+.progress{position:fixed;left:0;right:0;bottom:0;height:5px;z-index:20;transform-origin:left;transform:scaleX(var(--p,0));
+  background:linear-gradient(90deg,var(--base-a),var(--base-t),var(--base-c),var(--base-g))}
+
+.mvt{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.15rem;letter-spacing:.02em;color:var(--accent);margin-bottom:.15rem}
+h2 .mvt{font-size:1.25rem}
+
+.seqbox{margin-top:2.5rem;background:var(--surface);border:2px solid var(--ink);border-radius:.7rem;padding:1.1rem 1.25rem;box-shadow:6px 6px 0 var(--accent)}
+.seqhead{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;justify-content:space-between;margin-bottom:.5rem}
+.seqhead label{display:block}
+.seqhead input{font:inherit;font-size:1.4rem;font-weight:800;letter-spacing:-.01em;color:var(--ink);background:transparent;border:0;border-bottom:2px dashed var(--line);padding:.1rem 0;width:min(16rem,100%)}
+.seqhead input:focus{outline:0;border-bottom-color:var(--accent)}
+.seqscroll{overflow-x:auto;padding-bottom:.25rem}
+.seqscroll svg{display:block}
+.seqchar{font:700 13px "Bricolage Grotesque",system-ui,sans-serif;fill:var(--muted)}
+.seqbase{font:700 10px "Bricolage Grotesque",system-ui,sans-serif}
+.seqnote{transition:r .12s ease, filter .12s}
+.seqnote-cap{margin:.4rem 0 0;color:var(--muted);font-size:.9rem}
+
+.strip{display:inline-flex;align-items:flex-end;gap:2px;height:3.2rem;margin:0 0 .9rem;padding:.2rem .6rem .2rem .2rem;background:transparent;border:1.5px solid var(--line);border-radius:.4rem;cursor:pointer;font:inherit;color:var(--muted)}
+.strip span{width:4px;border-radius:2px;transition:transform .2s}
+.strip em{align-self:center;margin-left:.6rem;font-family:var(--serif);font-size:1.05rem}
+.strip:hover{border-color:var(--accent);color:var(--accent)}
+.strip:hover span{transform:scaleY(1.25)}
+
+@media (max-width:40rem){.seqhead{align-items:stretch}}
