@@ -7,7 +7,7 @@
 	--muted: #a2a8c6;
 	--line: #2f3556;
 	--accent: #9feaff;
-	--accent-soft: #1d3a3a;
+	--accent-soft: #473164;
 	--key-black: #05060f;
 	--key-white: #e9ebf6;
 	--base-a: #6ed6c3;
@@ -486,15 +486,17 @@ h2.in::after {
 	background: linear-gradient(90deg, var(--accent-soft), transparent 70%);
 	padding-left: 0.75rem;
 }
+
 .fact {
 	transition:
 		transform 0.25s,
 		border-color 0.25s;
+	border-color: rgba(142, 238, 255, 0.584);
 }
-.fact:hover {
+/* .fact:hover {
 	transform: translateY(-3px);
 	border-color: var(--accent);
-}
+} */
 
 /* skills as colored "bases" */
 .skills li {
@@ -1057,6 +1059,10 @@ header.hero {
 	margin-top: 20px;
 	padding-top: 20px;
 	border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.about.bl-panel {
+	border-color: var(--accent);
 }
 
 .bl-skill-pads li {

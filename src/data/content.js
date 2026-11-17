@@ -13,11 +13,11 @@ const SITE = {
   githubLabel: "github.com/cathyleii",
   location: "Vancouver, B.C., Canada",
 
-  intro: "Hi! I'm a student at UBC studying <strong>Computer Science and Bioinformatics</strong>. If the format of this website didn't already give it away, I love blending my tech projects with my hobbies in music and studies in genomics. When I'm not coding, I'm usually teaching :)",
+  intro: "Hi! I'm a student at UBC studying <strong>Computer Science and Bioinformatics</strong>. If the theme of this website didn't already give it away, I love combining my tech projects with my hobbies in music and studies in genomics. When I'm not coding, I'm usually teaching :)",
 
   about: [
-    "I\u2019m studying Integrated Sciences at the University of British Columbia, combining computer science with bioinformatics. I like projects where software meets something human: a journaling app that picks music for your mood, a model that screens MRI scans, a language for drawing graphs.",
-    "I also spend a lot of time teaching. I\u2019m an undergraduate teaching assistant for software construction, I\u2019ve guided kids through game development as a Code Sensei, and I\u2019ve taught piano for years."
+    "I\u2019m currently in the Integrated Sciences program at the University of British Columbia, integrating Computer Science with Bioinformatics. I like making projects about topics I'm passionate about, whether it's a journaling app that picks music based on the entry's content, a model that screens MRI scans, or a language for visualizing graphs.",
+    "I also enjoy teaching! I\u2019m currently an undergraduate teaching assistant for software construction, I\u2019ve guided kids through game development as a Code Sensei, and I\u2019ve taught piano for over 4 years."
   ],
 
   education: {

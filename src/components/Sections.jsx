@@ -357,8 +357,8 @@ export function Contact({ site }) {
 			<Head>Contact</Head>
 			<div className="bl-panel">
 				<Reveal as="p">
-					Looking for a collaborator, or want to talk about a project? Send me a
-					note.
+					Looking for a collaborator, or want to chat about a project? Send me a
+					message! :)
 				</Reveal>
 				<Reveal as="p" className="big">
 					<a href={`mailto:${site.email}`}>{site.email}</a>
